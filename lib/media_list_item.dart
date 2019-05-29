@@ -12,14 +12,33 @@ class MediaListItem extends StatelessWidget {
         return new Card(
             child: Column(
                 children: <Widget>[
-                    FadeInImage.assetNetwork(
-                        placeholder: 'assets/images/film-poster-placeholder.png',
-                        image: media.getBackDropUrl(),
-                        fit: BoxFit.cover,
-                        fadeInDuration: Duration(milliseconds: 40),
-                        width: double.infinity,
-                        height: 200,
-                    )
+                    Container(
+                        child: Stack(
+                            children: <Widget>[
+                                FadeInImage.assetNetwork(
+                                    placeholder: 'assets/images/film-poster-placeholder.png',
+                                    image: media.getBackDropUrl(),
+                                    fit: BoxFit.cover,
+                                    fadeInDuration: Duration(milliseconds: 40),
+                                    width: double.infinity,
+                                    height: 200,
+                                ),
+                                Positioned(
+                                    left: 0,
+                                    bottom: 0,
+                                    right: 0,
+                                    child: Container(
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey[900].withOpacity(0.5)
+                                        ),
+                                        constraints: BoxConstraints.expand(
+                                            height: 55
+                                        ),
+                                    ),
+                                )
+                            ],
+                        ),
+                    ),
                 ],
             ),
         );
