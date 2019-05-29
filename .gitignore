@@ -1,3 +1,6 @@
+
+/lib/common/env.dart
+
 # Miscellaneous
 *.class
 *.log
