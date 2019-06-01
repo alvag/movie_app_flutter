@@ -38,7 +38,7 @@ class MediaListItem extends StatelessWidget {
                                 ),
                                 Positioned(
                                     left: 10,
-                                    bottom: 30,
+                                    bottom: 10,
                                     child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: <Widget>[
@@ -50,7 +50,19 @@ class MediaListItem extends StatelessWidget {
                                                         color: Colors.white
                                                     ),
                                                 ),
-                                            )
+                                            ),
+                                            Container(
+                                                padding: const EdgeInsets.only(top: 4),
+                                                child: Text(
+                                                    media.getGenresName(),
+                                                    style: TextStyle(
+                                                        fontWeight: FontWeight.bold,
+                                                        color: Colors.white
+                                                    ),
+                                                    maxLines: 1,
+                                                    overflow: TextOverflow.ellipsis,
+                                                ),
+                                            ),
                                         ],
                                     ),
                                 )
